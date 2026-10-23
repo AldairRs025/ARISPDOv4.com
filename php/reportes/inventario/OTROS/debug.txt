@@ -1,0 +1,34 @@
+Opciones: Array
+(
+    [0] => nombre
+    [1] => categoria
+    [2] => precio
+    [3] => barcode
+    [4] => texto_codigo
+)
+
+Productos: Array
+(
+    [codigo_barra] => 1
+    [nombre_producto] => Frijol Negro 430g
+    [categoria] => Abarrotes
+    [precio_venta] => 20.00
+    [cantidad] => 2.00
+)
+Opciones: Array
+(
+    [0] => nombre
+    [1] => categoria
+    [2] => precio
+    [3] => barcode
+    [4] => texto_codigo
+)
+
+Productos: Array
+(
+    [codigo_barra] => 1
+    [nombre_producto] => Frijol Negro 430g
+    [categoria] => Abarrotes
+    [precio_venta] => 20.00
+    [cantidad] => 2.00
+)

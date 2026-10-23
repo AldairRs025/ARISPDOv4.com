@@ -1,0 +1,596 @@
+/* ===============================
+   FUENTES
+================================*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Kalam:wght@300;400;700&display=swap');
+
+/* ===============================
+   RESETEO
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Kalam', cursive;
+}
+
+/* ===============================
+   BARRA SUPERIOR
+================================*/
+.barra-superior {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: visible;
+
+    z-index: 1000;
+    /* 🔥 POR ENCIMA DEL CONTENIDO */
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    /* antes 42px */
+    color: white;
+}
+
+/* ===============================
+   ICONOS DEL PANEL ADMIN
+================================*/
+
+/* BOTONES DE ICONOS INTERACTIVOS */
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    /* tamaño del círculo */
+    height: 52px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: 0.25s ease;
+    margin-top: 5px;
+    /* baja los círculos como pediste */
+}
+
+/* Configuración común */
+.icon-btn {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
+
+/* EFECTO HOVER (animación suave) */
+.icon-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+/* ===============================
+   ICONOS VECTORIALES (BOOTSTRAP)
+================================*/
+
+.icon-btn i {
+    font-size: 26px;
+    color: #000;
+    transition: all 0.25s ease;
+}
+
+/* Hover combinado */
+.icon-btn:hover i {
+    color: #474747;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+/* ===============================
+   TOOLTIP BOTONES SUPERIOR DERECHA
+================================*/
+
+.icon-btn {
+    position: relative;
+}
+
+/* Tooltip */
+.icon-btn .tooltip {
+    position: absolute;
+    top: 120%;
+    /* abajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8b8b8b;
+    color: #000000;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+}
+
+/* Flecha */
+.icon-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+}
+
+/* Mostrar tooltip */
+.icon-btn:hover .tooltip {
+    opacity: 1;
+}
+
+/* ===============================
+   BARRA INFERIOR
+================================*/
+.barra-inferior {
+    width: 100%;
+    height: 50px;
+    /* antes 85px */
+    background: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+/* ======================================================================================================*/
+
+
+/* ==============================================================
+                            DISEÑO RESUMEN INVENTARIO
+===============================================================*/
+.resumen-inventario {
+    margin: 90px 0 0 10%;
+    position: fixed;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    z-index: 1000;
+}
+
+.card-resumen {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-resumen h4 {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.card-resumen p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-resumen.alerta {
+    background: #fff3cd;
+    color: #856404;
+}
+
+
+
+
+
+/* ==============================================================
+                            DISEÑO FORMULARIO
+===============================================================*/
+
+/* ===============================
+   FORMULARIO COMPACTO
+================================*/
+.form-productos {
+    margin: 80px 0 0 64.5%;
+    position: fixed;
+
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    max-width: 40%;
+    height: 76vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 1200px) {
+    .form-productos {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-productos {
+        max-width: 100%;
+    }
+}
+
+/* GRID MÁS COMPACTO */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* columnas en el formulario */
+    gap: 18px;
+    /* 🔥 ahora SÍ hay separación */
+}
+
+/* GRUPOS */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    /* 🔥 letras más grandes */
+    font-weight: 600;
+    /* 🔥 más legibles */
+    margin-bottom: 16px;
+    /* 🔥 más espacio entre inputs */
+    color: #333;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    /* 🔥 separación label/input */
+}
+
+/* INPUTS COMPACTOS */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 8px 10px;
+    /* 🔥 más espacio interno */
+    font-size: 13px;
+    /* 🔥 texto más legible */
+    border-radius: 6px;
+    min-height: 38px;
+}
+
+/* TEXTAREA COMPACTO */
+.form-group textarea {
+    height: 32px;
+    resize: none;
+}
+
+/* COLUMNAS */
+.col-1 {
+    grid-column: span 1;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-8 {
+    grid-column: span 4;
+}
+
+/* 🔥 importante */
+
+/* ===============================
+   PREVIEW IMAGEN
+================================*/
+.preview-container {
+    width: 100%;
+    height: 140px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    background: #fafafa;
+}
+
+.preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    border-radius: 6px;
+}
+
+/* BOTÓN COMPACTO */
+.btn-guardar {
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+}
+
+/* ===============================
+   PRECIO DE VENTA
+================================*/
+
+/* Campo inválido */
+.form-productos input.input-error {
+    border: 2px solid #dc3545 !important;
+    background-color: #ffe6e6 !important;
+}
+
+/* Mensaje de error */
+.mensaje-error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* ==============================================================
+                        DISEÑO TABLA y BUSCADOR
+===============================================================*/
+.contenedor-tabla {
+    /* altura del header */
+    margin-right: 35%;
+    /* espacio del formulario */
+
+    /* background-color: #000;
+    color: #000; */
+
+    height: calc(100vh - 70px);
+    overflow: hidden; /* 🔥 CAMBIAR ESTO */
+    padding: 20px;
+}
+
+/* ==============================================================
+                            DISEÑO BUSCADOR
+===============================================================*/
+
+.buscador-productos {
+    position: fixed;
+    margin: 100px 0;
+}
+
+#buscador {
+    width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.filter-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-filter, .btn-clear {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-filter {
+    background: #28a745;
+    color: white;
+}
+
+.btn-clear {
+    background: #dc3545;
+    color: white;
+}
+
+/* ==============================================================
+                            DISEÑO TABLA
+===============================================================*/
+
+/* ===============================
+   ESTADOS "SCROLL"
+================================*/
+
+/* CONTENEDOR GENERAL */
+.tabla-container {
+    max-height: calc(85vh - 220px);
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+/* Fijar el encabezado */
+.tabla-productos thead {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Para que el encabezado se vea bien */
+.tabla-productos th {
+  border-bottom: 1px solid #555;
+  white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Para que las celdas se ajusten */
+.tabla-productos td {
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===============================
+   ESTADOS "COLOR"
+================================*/
+.estado {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.estado-activo {
+    background-color: #d4f7dc;
+    color: #1f7a3f;
+}
+
+.estado-inactivo {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* ===============================
+   STOCK "COLOR"
+================================*/
+.stock-ok {
+    color: #1f7a3f;
+    font-weight: bold;
+}
+
+.stock-bajo {
+    color: #c1121f;
+    font-weight: bold;
+}
+
+
+/* ===============================
+   ACCIONES TABLA
+================================*/
+
+.acciones {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-editar,
+.btn-eliminar {
+    font-size: 18px;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover Azul Editar */
+.btn-editar:hover {
+    color: #0d6efd;
+    transform: scale(1.2);
+}
+
+/* Hover Rojo Eliminar */
+.btn-eliminar:hover {
+    color: #dc3545;
+    transform: scale(1.2);
+}
+
+/* ===============================
+   ACCIONES TABLA LOTES
+================================*/
+/* === ESTILOS PARA LOTES (modal popup) === */
+/* Contenedor centrado */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Tabla centrada y con padding 10px */
+.table-lotes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    /* ✅ Padding exacto que solicitas */
+    padding: 5px; 
+    text-align: center;
+}
+
+.table-lotes th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estados — mantienen tus colores y texto negro */
+.vencido {
+    background-color: #ffebee;
+    color: #c62828;
+    font-weight: bold;
+}
+.proximo {
+    background-color: #fff8e1;
+    color: #e65100;
+    font-weight: bold;
+}
+.ok {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.estado-label {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Etiquetas con texto NEGRO (como pediste) */
+.vencido .estado-label { background: #f44336; color: black; }
+.proximo .estado-label { background: #ff9800; color: black; }
+.ok .estado-label { background: #4caf50; color: black; }
+
+/* Asegurar que los iconos sean visibles */
+.estado-label i {
+    font-size: 14px;
+}
+

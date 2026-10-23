@@ -1,0 +1,31 @@
+extension=zip
+extension=gd
+extension=mysqli
+extension=pdo_mysql
+extension=mbstring
+extension=curl
+extension=openssl
+
+
+extension=json
+extension=XML
+
+
+Opción 1: Desde hPanel (Recomendado)
+Inicia sesión en hPanel de Hostinger
+Ve a Hosting → Selecciona tu dominio
+Busca "Configuración de PHP" o "PHP Configuration"
+Busca la pestaña "Extensiones" o "PHP Extensions"
+Busca y marca:
+✅ zip
+✅ gd
+✅ mysqli
+✅ mbstring
+✅ curl
+✅ openssl
+Haz clic en "Guardar" o "Save"
+
+
+Opción 2: Crear archivo .user.ini
+Si no encuentras la opción en hPanel, crea un archivo llamado .user.ini en la raíz de tu proyecto (public_html/.user.ini):
+

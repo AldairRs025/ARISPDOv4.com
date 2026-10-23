@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>• LOS NIETOS - ARIS. v1</title>
+    <!-- Ahora el CSS apunta a /css/LOGIN-STYLE -->
+    <!-- <link rel="stylesheet" href="css/LOGIN-STYLE/styles.css"> -->
+    <link rel="stylesheet" href="css/LOGIN-STYLE/styles2.css">
+    <link rel="icon" href="img/LOGIN/icon_24px.png" type="img/INICIO/icon_24px.png" />
+</head>
+
+<body>
+    <div class="login-container">
+        <!-- Caja del formulario -->
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+
+            <form action="php/login/login.php" method="POST">
+                <div class="input-container">
+                    <input type="text" name="username" required placeholder="Usuario">
+                    <span class="underline"></span>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" name="password" required placeholder="Contraseña">
+                    <span class="underline"></span>
+                </div>
+
+                <button type="submit">Validar</button>
+            </form>
+        </div>
+
+        <!-- Caja de la imagen -->
+        <div class="image-box">
+            <img src="img/LOGIN/Login.png" alt="Los Nietos">
+        </div>
+    </div>
+</body>
+
+</html>

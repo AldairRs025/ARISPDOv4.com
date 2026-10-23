@@ -1,0 +1,488 @@
+/* ===============================
+   FUENTES
+================================*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Kalam:wght@300;400;700&display=swap');
+
+/* ===============================
+   RESETEO
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Kalam', cursive;
+}
+
+/* ===============================
+   BARRA SUPERIOR
+================================*/
+.barra-superior {
+    width: 100%;
+    height: 60px;
+    background: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: visible;
+
+    position: relative;
+    /* 🔥 CREA CONTEXTO */
+    z-index: 1000;
+    /* 🔥 POR ENCIMA DEL CONTENIDO */
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    /* antes 42px */
+    color: white;
+}
+
+/* ===============================
+   ICONOS DEL PANEL ADMIN
+================================*/
+
+/* BOTONES DE ICONOS INTERACTIVOS */
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    /* tamaño del círculo */
+    height: 52px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: 0.25s ease;
+    /* margin-top: 5px; baja los círculos como pediste */
+}
+
+/* Configuración común */
+.icon-btn {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
+
+/* EFECTO HOVER (animación suave) */
+.icon-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+/* ===============================
+   ICONOS VECTORIALES (BOOTSTRAP)
+================================*/
+
+.icon-btn i {
+    font-size: 26px;
+    color: #000;
+    transition: all 0.25s ease;
+}
+
+/* Hover combinado */
+.icon-btn:hover i {
+    color: #474747;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+/* ===============================
+   TOOLTIP BOTONES SUPERIOR DERECHA
+================================*/
+
+.icon-btn {
+    position: relative;
+}
+
+/* Tooltip */
+.icon-btn .tooltip {
+    position: absolute;
+    top: 120%;
+    /* abajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8b8b8b;
+    color: #000000;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+}
+
+/* Flecha */
+.icon-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+}
+
+/* Mostrar tooltip */
+.icon-btn:hover .tooltip {
+    opacity: 1;
+}
+
+/* ===============================
+   BARRA INFERIOR
+================================*/
+.barra-inferior {
+    width: 100%;
+    height: 50px;
+    /* antes 85px */
+    background: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********************************************************************** */
+
+
+.reportes-container {
+    margin: 100px 5% 50px 5%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reportes-container h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.buscador-reportes {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+}
+
+.buscador-reportes input {
+    width: 100%;
+    padding: 15px 25px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Kalam', cursive;
+}
+
+.grid-reportes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card-reporte {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.card-reporte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #0d6efd;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.card-header i {
+    font-size: 32px;
+    color: #0d6efd;
+}
+
+.card-header h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 22px;
+    color: #333;
+    margin: 0;
+}
+
+.lista-reportes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-reportes li {
+    margin-bottom: 10px;
+}
+
+.lista-reportes a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Kalam', cursive;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    border: 1px solid #e9ecef;
+}
+
+.lista-reportes a:hover {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.opciones-globales {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.formatos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.formatos label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #ddd;
+}
+
+.formatos label:hover {
+    border-color: #0d6efd;
+}
+
+.formatos input[type="radio"]:checked+i {
+    color: #0d6efd;
+}
+
+
+
+
+
+
+
+
+.reporte-header {
+    text-align: center;
+    border-bottom: 3px solid #28a745;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.filtros-reporte {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.filtros-reporte label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filtros-reporte input[type="date"],
+.filtros-reporte select {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Kalam', cursive;
+    font-size: 14px;
+}
+
+.filtros-reporte button {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Kalam', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filtros-reporte button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.tabla-reporte {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.tabla-reporte thead {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+}
+
+.tabla-reporte th,
+.tabla-reporte td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-reporte tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.totales-reporte {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.total-item {
+    text-align: center;
+}
+
+.total-item h4 {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.total-item p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.botones-accion {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-accion {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.btn-pdf {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+.btn-excel {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+}
+
+.btn-imprimir {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: white;
+}
+
+.btn-accion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media print {
+
+    .barra-superior,
+    .filtros-reporte,
+    .botones-accion,
+    .barra-inferior {
+        display: none !important;
+    }
+
+    .reporte-container {
+        margin: 0;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: url("../../img/LOGIN/FONDO.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  width: 100%;                /* ocupa el 100% del espacio disponible */
+  max-width: 850px;           /* pero no pasa de 850px de ancho */
+  min-height: 500px;          /* asegura la altura mínima */
+  margin: 60px auto;
+  background: #fcfef2c3;         
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;   /* 🔹 menos padding para hacerlo más bajo */
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+}
+
+.login-box {
+  width: 50%;
+}
+
+.login-box h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-style: italic;
+  color: #333;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.input-container input {
+  width: 80%;           /* ocupa solo el 80% del contenedor */
+  max-width: 300px;     /* nunca pasa de 300px */
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Cuando el input está en foco */
+.input-container input:focus {
+  border: 1px solid #27ae60;
+  box-shadow: 6px 6px 0px #000;  /* Sombra estilo "bloque negro" */
+  transform: translate(-2px, -2px); /* efecto pequeño de presión */
+}
+
+button {
+  margin: 20px auto;            /* 🔹 centra el botón */
+  display: block;               /* 🔹 necesario para centrar */
+  width: 150px;                 
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #111;              
+  color: #fff;
+  border: none;
+  border-radius: 12px;           
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+  transition: all 0.3s ease;     
+}
+
+/* Hover con efecto */
+button:hover {
+  background: #28a745;           /* verde al pasar el mouse */
+  transform: scale(1.05);        /* efecto zoom */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.image-box {
+  width: 60%;                 /* mantiene el ancho actual */
+  display: flex;              /* usamos flexbox */
+  justify-content: center;    /* centra horizontalmente */
+  align-items: center;        /* centra verticalmente */
+}
+
+.image-box img {
+  max-width: 90%;             /* que no se pegue demasiado al borde */
+  height: auto;
+  border-radius: 70px;
+  border: 5px solid #518f49;
+  padding: 10px;
+  background: #fff;
+}
+

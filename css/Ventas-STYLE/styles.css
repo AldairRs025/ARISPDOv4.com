@@ -1,0 +1,151 @@
+/* ===============================
+   FUENTES
+================================*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Kalam:wght@300;400;700&display=swap');
+
+/* ===============================
+   RESETEO
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Kalam', cursive;
+}
+
+/* ===============================
+   BARRA SUPERIOR
+================================*/
+.barra-superior {
+    width: 100%;
+    height: 60px;
+    background: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: visible;
+
+    position: relative; /* 🔥 CREA CONTEXTO */
+    z-index: 1000;      /* 🔥 POR ENCIMA DEL CONTENIDO */
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px; /* antes 42px */
+    color: white;
+}
+
+/* ===============================
+   ICONOS DEL PANEL ADMIN
+================================*/
+
+/* BOTONES DE ICONOS INTERACTIVOS */
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;      /* tamaño del círculo */
+    height: 52px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+    margin-top: 5px; /* baja los círculos como pediste */
+}
+
+/* Configuración común */
+.icon-btn {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
+
+/* EFECTO HOVER (animación suave) */
+.icon-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 12px rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+/* ===============================
+   ICONOS VECTORIALES (BOOTSTRAP)
+================================*/
+
+.icon-btn i {
+    font-size: 26px;
+    color: #000;
+    transition: all 0.25s ease;
+}
+
+/* Hover combinado */
+.icon-btn:hover i {
+    color: #474747;
+    text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+/* ===============================
+   TOOLTIP BOTONES SUPERIOR DERECHA
+================================*/
+
+.icon-btn {
+    position: relative;
+}
+
+/* Tooltip */
+.icon-btn .tooltip {
+    position: absolute;
+    top: 120%; /* abajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8b8b8b;
+    color: #000000;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+}
+
+/* Flecha */
+.icon-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+}
+
+/* Mostrar tooltip */
+.icon-btn:hover .tooltip {
+    opacity: 1;
+}
+
+/* ===============================
+   BARRA INFERIOR
+================================*/
+.barra-inferior {
+    width: 100%;
+    height: 50px; /* antes 85px */
+    background: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
